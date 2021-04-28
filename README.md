@@ -2,28 +2,106 @@
 
 ---
 
-# my-ts-lib
+# node-apikit
 
-[![npm version](https://badgen.net/npm/v/my-ts-lib)](https://npm.im/my-ts-lib)
-
-## Using this template
-
-- Search `my-ts-lib` and replace it with your custom package name.
-- Search `egoist` and replace it with your name.
-
-Features:
-
-- Package manager [pnpm](https://pnpm.js.org/), safe and fast
-- Release with [semantic-release](https://npm.im/semantic-release)
-- Bundle with [tsup](https://github.com/egoist/tsup)
-- Test with [jest](https://jestjs.io/)
+[![npm version](https://badgen.net/npm/v/node-apikit)](https://npm.im/node-apikit)
 
 ## Install
 
 ```bash
-npm i my-ts-lib
+npm i node-apikit
+```
+
+NOTE: this library requires a `fetch` polyfill if you're running it in Node.js.
+
+## API
+
+### `getHTML`
+
+Get HTML for specific URL:
+
+`````ts
+import { getHTML } from 'node-apikit'
+
+const html = await getHTML(url)
+```
+
+Arguments:
+
+- `url`: URL
+- `options`:
+    - `js`: `boolean` Run JavaScript on this page, default to `false`
+
+### `screenshot`
+
+Screenshot specific URL:
+
+````ts
+import { screenshot } from 'node-apikit'
+
+const { getBuffer } = await screenshot(url)
+const arrayBuffer = await getBuffer()
+```
+
+Arguments:
+
+- `url`: URL
+- `options`:
+    - `fullPage`: `boolean` screenshot the full page, default to `false`
+
+### `getRealURL`
+
+Get the final URL, i.e. after redirection.
+
+````ts
+import { getRealURL } from 'node-apikit'
+
+const url = await getRealURL(url)
+```
+
+Arguments:
+
+- `url`: URL
+
+### `seo`
+
+Get SEO information for specific URL:
+
+````ts
+import { seo } from 'node-apikit'
+
+const info = await seo(url)
+```
+
+Arguments:
+
+- `url`: URL
+- `options`:
+    - `js`: `boolean` Run JavaScript on this page, default to `false`
+
+Returns:
+
+```ts
+interface Info {
+  title?: string
+  description?: string
+  image?: string
+  og: {
+    title?: string
+    description?: string
+    image?: string
+  }
+  twitter: {
+    creator?: string
+    site?: string
+    title?: string
+    description?: string
+    image?: string
+  }
+}
 ```
 
 ## License
 
 MIT &copy; [EGOIST](https://github.com/sponsors/egoist)
+`````
