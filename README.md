@@ -12,7 +12,7 @@
 npm i node-apikit
 ```
 
-NOTE: this library requires a `fetch` polyfill if you're running it in Node.js.
+NOTE: this library requires a `fetch` polyfill if you're running it in Node.js. Despit being named `node-apikit`, it actually supports browser and Deno too.
 
 ## API
 
