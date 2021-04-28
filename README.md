@@ -20,7 +20,7 @@ NOTE: this library requires a `fetch` polyfill if you're running it in Node.js.
 
 Get HTML for specific URL:
 
-`````ts
+```ts
 import { getHTML } from 'node-apikit'
 
 const html = await getHTML(url)
@@ -30,13 +30,13 @@ Arguments:
 
 - `url`: URL
 - `options`:
-    - `js`: `boolean` Run JavaScript on this page, default to `false`
+  - `js`: `boolean` Run JavaScript on this page, default to `false`
 
 ### `screenshot`
 
 Screenshot specific URL:
 
-````ts
+`````ts
 import { screenshot } from 'node-apikit'
 
 const { getBuffer } = await screenshot(url)
