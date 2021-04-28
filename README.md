@@ -36,7 +36,7 @@ Arguments:
 
 Screenshot specific URL:
 
-`````ts
+```ts
 import { screenshot } from 'node-apikit'
 
 const { getBuffer } = await screenshot(url)
@@ -47,13 +47,13 @@ Arguments:
 
 - `url`: URL
 - `options`:
-    - `fullPage`: `boolean` screenshot the full page, default to `false`
+  - `fullPage`: `boolean` screenshot the full page, default to `false`
 
 ### `getRealURL`
 
 Get the final URL, i.e. after redirection.
 
-````ts
+```ts
 import { getRealURL } from 'node-apikit'
 
 const url = await getRealURL(url)
@@ -67,7 +67,7 @@ Arguments:
 
 Get SEO information for specific URL:
 
-````ts
+```ts
 import { seo } from 'node-apikit'
 
 const info = await seo(url)
@@ -77,7 +77,7 @@ Arguments:
 
 - `url`: URL
 - `options`:
-    - `js`: `boolean` Run JavaScript on this page, default to `false`
+  - `js`: `boolean` Run JavaScript on this page, default to `false`
 
 Returns:
 
@@ -104,4 +104,3 @@ interface Info {
 ## License
 
 MIT &copy; [EGOIST](https://github.com/sponsors/egoist)
-`````
